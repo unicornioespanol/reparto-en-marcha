@@ -2,6 +2,12 @@
 
 Дата: 14 ноября 2026 года.
 
+## GitHub и GitHub Pages · 16 ноября 2026
+
+По явному разрешению пользователя репозиторий открыт для публичного доступа: https://github.com/unicornioespanol/reparto-en-marcha. Адрес игры: https://unicornioespanol.github.io/reparto-en-marcha/.
+
+Настроен workflow `.github/workflows/pages.yml`: Node.js 24, установка по lock-файлу, сборка и 22 проверки логики/аудиофайлов, Chromium и 19 браузерных сценариев, загрузка `dist/` и публикация в окружение `github-pages`. GitHub Pages использует источник GitHub Actions; переменная репозитория `PAGES_ENABLED=true` включает публикацию при следующих push в `main`. Каталоги зависимостей, временных файлов, локальных результатов и сборки исключены из Git.
+
 ## Подключение озвучки и саундтрека · 16 ноября 2026
 
 Подключены все 12 предоставленных записей из `src/audio/orders/` и `src/audio/Reparto en marcha (Gameplay Loop).mp3`. Новые записи заменили первоначальную синтезированную озвучку. Оригиналы не изменены. Теперь `npm.cmd run build` проверяет источники и копирует их в `public/audio/` и `dist/audio/`; обновлять вручную три копии не нужно. Путь саундтрека в сборке — `audio/music/gameplay-loop.mp3`.

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#eae6ef">
+  <meta name="description" content="Escucha el destino y lleva tu pedido por cuatro barrios. Un juego de español A1.2.">
+  <title>Reparto en marcha</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+<main class="layout">
+  <section class="order" aria-label="Pedido">
+    <div class="identity">
+      <div class="district"><i class="pin" aria-hidden="true"></i><span id="district">Mi barrio</span></div>
+      <h1>Reparto<span>en marcha</span></h1>
+    </div>
+    <div class="ticket">
+      <div class="ticket-body">
+        <span class="order-meta" id="delivery">Pedido 1 de 3</span>
+        <p class="prompt" id="prompt" aria-live="polite">Escucha el destino</p>
+      </div>
+      <div class="actions">
+        <button class="ui primary" type="button" id="listen"><span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Escuchar</button>
+        <button class="ui" type="button" id="text" aria-expanded="false" aria-controls="prompt">Ver texto</button>
+      </div>
+    </div>
+  </section>
+  <figure class="board" aria-label="Mapa del barrio">
+    <canvas id="map" width="432" height="624" role="img" aria-label="Tres entradas en la parte superior. Lleva al repartidor desde abajo con las flechas."></canvas>
+    <div class="notice" id="notice" role="status" hidden></div>
+  </figure>
+  <section class="side" aria-label="Controles y progreso">
+    <p class="control-label">Mover al repartidor</p>
+    <div class="dpad">
+      <button type="button" class="dir" data-dir="up" aria-label="Arriba"></button>
+      <button type="button" class="dir" data-dir="left" aria-label="Izquierda"></button>
+      <button type="button" class="dir" data-dir="down" aria-label="Abajo"></button>
+      <button type="button" class="dir" data-dir="right" aria-label="Derecha"></button>
+    </div>
+    <p class="keyguide"><kbd>Flechas</kbd> o <kbd>WASD</kbd><br><kbd>Espacio</kbd> para escuchar<br><kbd>Esc</kbd> para pausar</p>
+    <div class="tools">
+      <div class="progress" id="progress" role="img" aria-label="0 de 3 entregas">
+        <span>Entregas</span><span class="marks" aria-hidden="true"><i class="dot current"></i><i class="dot"></i><i class="dot"></i></span>
+      </div>
+      <div class="lives" id="lives" role="img" aria-label="3 intentos">
+        <span id="attempt-label">Intentos</span><span class="marks" id="attempt-marks" aria-hidden="true"><i class="life"></i><i class="life"></i><i class="life"></i></span>
+      </div>
+      <div class="play-tools">
+        <button class="ui" id="pause" type="button"><span class="pause-icon" aria-hidden="true"></span>Pausa</button>
+        <button class="ui" id="music" type="button" aria-label="Música" aria-pressed="true" title="Desactivar música"><span class="music-icon" aria-hidden="true">♪</span><span class="music-label">Música</span></button>
+      </div>
+    </div>
+  </section>
+</main>
+<dialog id="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-detail">
+  <p class="eyebrow" id="dialog-kicker">Escucha · cruza · entrega</p>
+  <h2 id="dialog-title">Reparto en marcha</h2>
+  <p id="dialog-detail" class="dialog-detail" aria-live="polite"></p>
+  <div id="dialog-extra"></div>
+  <div class="dialog-actions" id="dialog-actions"></div>
+</dialog>
+<noscript>Activa JavaScript para jugar a Reparto en marcha.</noscript>
+<script type="module" src="ui/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+/* Additions to the supplied mockup; original font attribution is in FONT-LICENSE.txt. */
+.ui{min-width:48px;min-height:48px}
+.ui:disabled{opacity:.6;cursor:wait}
+.play-tools{gap:6px}
+.play-tools .ui{padding-inline:7px;min-width:0;font-size:12px}
+#music{display:flex;align-items:center;justify-content:center;gap:4px;flex:1}
+.music-icon{position:relative;font-size:20px;line-height:1}
+#music[aria-pressed="false"] .music-icon::after{content:"";position:absolute;width:19px;height:2px;left:-3px;top:9px;background:currentColor;transform:rotate(-45deg)}
+#music[aria-pressed="true"]{background:#ddd5ed}
+dialog{max-width:min(460px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;width:420px}
+dialog h2{font-size:38px;line-height:1.05}
+.eyebrow{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--tomato);margin:0 0 10px}
+.dialog-detail{line-height:1.55;max-width:none}
+.dialog-actions{margin-top:18px;gap:8px}
+.dialog-actions .ui{flex:1 0 auto}
+.settings{display:grid;gap:11px;margin-block:16px}
+.settings label{display:flex;align-items:center;gap:10px;min-height:40px;font-weight:700}
+.settings label.select-label{display:grid;gap:5px}
+.settings input{width:21px;height:21px;accent-color:var(--iris)}
+.settings select{width:100%;padding:11px;border:1.5px solid var(--ink);border-radius:8px;background:var(--paper);color:var(--ink);font:inherit;min-height:48px}
+.settings select:focus-visible{outline:3px solid #6236bb;outline-offset:3px}
+.summary{display:grid;gap:7px;padding:0;list-style:none;margin:16px 0}
+.summary li{display:flex;align-items:center;gap:10px;border-bottom:1px dashed #b3a78e;padding:8px 0}
+.result-symbol{width:26px;height:26px;border:1px solid currentColor;border-radius:6px;display:grid;place-items:center;color:var(--iris);flex:none}
+.result-symbol.missed{color:var(--tomato)}
+@media(min-width:950px){.board{width:min(calc((100dvh - 44px)*9/13 + 8px),calc(100vw - 446px),616px)}}
+@media(max-width:679px),(max-width:949px) and (orientation:portrait){
+  .layout{gap:7px;padding-block:7px max(7px,env(safe-area-inset-bottom))}
+  .ticket{min-height:58px}.actions .ui{padding-inline:6px;font-size:11px}
+  .board{width:min(490px,calc(100% - 4px),max(166px,calc((100dvh - 217px - env(safe-area-inset-bottom))*9/13)))}
+  .tools{max-width:400px}.play-tools .ui{font-size:11px}
+  .tools{gap:4px}.play-tools{gap:4px;flex:none}.play-tools .ui{padding-inline:5px;min-width:48px}
+  #pause{gap:5px}#pause .pause-icon{display:none}#music{flex:none;width:48px}.music-label{display:none}
+  .prompt{font-size:12px;line-height:1.15;max-width:32ch}
+  dialog{padding:18px}dialog h2{font-size:32px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
